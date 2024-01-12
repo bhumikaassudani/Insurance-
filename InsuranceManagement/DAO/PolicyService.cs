@@ -22,7 +22,7 @@ namespace InsuranceManagement.DAO
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Policy (policyId,policyNumber, coverageDetails) VALUES (@policyNumber, @coverageDetails)";
+                    string query = "INSERT INTO Policy (policyId,policyNumber, coverageDetails) VALUES (@policyId,@policyNumber, @coverageDetails)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@policyId", policy.PolicyId);
@@ -54,7 +54,7 @@ namespace InsuranceManagement.DAO
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT policyId, policyNumber, coverageDetails FROM Policies WHERE policyId = @policyId";
+                    string query = "SELECT * FROM Policy WHERE policyId = @policyId";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@policyId", policyId);
@@ -91,7 +91,7 @@ namespace InsuranceManagement.DAO
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT policyId, policyNumber, coverageDetails FROM Policy";
+                    string query = "SELECT * FROM Policy";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -100,9 +100,9 @@ namespace InsuranceManagement.DAO
                             {
                                 policies.Add(new Policy
                                 {
-                                    PolicyId = reader.GetInt32(0),
-                                    PolicyNumber = reader.GetString(1),
-                                    CoverageDetails = reader.GetString(2)
+                                    policyId = reader.GetInt32(0),
+                                    policyNumber = reader.GetString(1),
+                                    coverageDetails = reader.GetString(2)
                                 });
                             }
                         }
@@ -127,7 +127,7 @@ namespace InsuranceManagement.DAO
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE Policies SET policyNumber = @policyNumber, coverageDetails = @coverageDetails WHERE policyId = @policyId";
+                    string query = "UPDATE Policy SET policyNumber = @policyNumber, coverageDetails = @coverageDetails WHERE policyId = @policyId";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@policyId", policy.PolicyId);
@@ -155,7 +155,7 @@ namespace InsuranceManagement.DAO
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM Policies WHERE policyId = @policyId";
+                    string query = "DELETE FROM Policy WHERE policyId = @policyId";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@policyId", policyId);
