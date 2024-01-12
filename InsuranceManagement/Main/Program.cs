@@ -107,7 +107,7 @@ namespace InsuranceManagement.Main
 
                     if (policy != null)
                     {
-                        Console.WriteLine($"Policy details:\n{policy}");
+                        Console.WriteLine($"Policy details:Found");
                     }
                     else
                     {
