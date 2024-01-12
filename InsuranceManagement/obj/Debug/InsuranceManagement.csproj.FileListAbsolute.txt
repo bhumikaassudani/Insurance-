@@ -1,0 +1,7 @@
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\bin\Debug\InsuranceManagement.exe.config
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\bin\Debug\InsuranceManagement.exe
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\bin\Debug\InsuranceManagement.pdb
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\obj\Debug\InsuranceManagement.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\obj\Debug\InsuranceManagement.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\obj\Debug\InsuranceManagement.exe
+C:\Users\hp\source\repos\InsuranceManagement\InsuranceManagement\obj\Debug\InsuranceManagement.pdb
